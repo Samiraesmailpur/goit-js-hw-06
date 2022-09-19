@@ -1,0 +1,26 @@
+const form = document.querySelector(".login-form");
+console.log(form.elements);
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  let inputValues = [form.elements.email.value, form.elements.password.value];
+  const isEmpty = inputValues.every((elem) => {
+    return elem != "" && elem != null;
+  });
+  console.log(isEmpty);
+  if (!isEmpty) {
+    alert("Все поля должны быть заполнены!");
+    return;
+  }
+  const obj = {
+    email: form.elements.email.value,
+    password: form.elements.password.value,
+  };
+  console.log(obj);
+  form.reset();
+});
+if ("emsil" in obj) {
+  ("мы знаем что в обьекте obj есть ключ emsil");
+} else {
+  ("мы знаем что в обьекте obj нету ключа emsil");
+}
